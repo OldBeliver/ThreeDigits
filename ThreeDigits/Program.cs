@@ -12,27 +12,27 @@ namespace ThreeDigits
         {
             int minValue = 1;
             int maxValue = 27;
-            int min3DigitsNumber = 100;
-            int max3DigitsNumber = 999;
+            int minDigitsNumber = 100;
+            int maxDigitsNumber = 999;
 
             Random rand = new Random();
             int number = rand.Next(minValue, maxValue + 1);
             
             int result = 0;
-            int i = 1;
+            int index = 1;
             int quantity = 0;
             string line = "";
 
-            while (result <= max3DigitsNumber)
+            while (result <= maxDigitsNumber)
             {
-                result = i * number;
+                result = index * number;
 
-                if (result >= min3DigitsNumber && result <= max3DigitsNumber)
+                if (result >= minDigitsNumber && result <= maxDigitsNumber)
                 {
                     quantity++;
                     line += result + " ";
                 }
-                i++;
+                index++;
             }
             Console.WriteLine($"число {number}\nчисловой ряд: {line}\nколичество чисел: {quantity}");
         }
