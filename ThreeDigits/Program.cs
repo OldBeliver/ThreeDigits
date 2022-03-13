@@ -18,22 +18,17 @@ namespace ThreeDigits
             Random rand = new Random();
             int number = rand.Next(minValue, maxValue + 1);
             
-            int result = 0;
-            int index = 1;
             int quantity = 0;
             string line = "";
 
-            while (result <= maxDigitsNumber)
-            {
-                result = index * number;
-
-                if (result >= minDigitsNumber && result <= maxDigitsNumber)
+            for (int i = 0; i < maxDigitsNumber; i+=number)
+            {   
+                if (i >= minDigitsNumber && i <= maxDigitsNumber)
                 {
                     quantity++;
-                    line += result + " ";
+                    line += i + " ";
                 }
-                index++;
-            }
+            }            
             Console.WriteLine($"число {number}\nчисловой ряд: {line}\nколичество чисел: {quantity}");
         }
     }
